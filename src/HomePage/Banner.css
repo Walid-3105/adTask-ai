@@ -1,0 +1,61 @@
+body {
+  background-color: #122436;
+  height: 100vh;
+}
+
+.shadow {
+  filter: drop-shadow(10px 10px 200px #ffffff)
+    drop-shadow(-10px -10px 50px #ffffff);
+}
+
+.triangle-wrapper {
+  width: 30vw;
+  height: calc(30vw / (1 / 1));
+  clip-path: polygon(50% 80%, 70% 80%, 30% 80%);
+  background-color: #fdfdfd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.triangle {
+  width: calc(40vw - 30px);
+  height: calc(34vw);
+  background-color: #ffffff06;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  margin-top: 10px;
+  filter: blur(115px) drop-shadow(-10px -10px 75px #ffffff);
+}
+.triangle p {
+  color: #fff;
+}
+
+@keyframes fadeInBright {
+  0% {
+    opacity: 0;
+    filter: brightness(0.1);
+  }
+  100% {
+    opacity: 1;
+    filter: brightness(2);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeInBright 3s ease-in-out forwards;
+}
+
+@keyframes glowEffect {
+  0% {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+  }
+  100% {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+  }
+}
+
+.hover\:animate-glow:hover {
+  animation: glowEffect 1s ease-in-out infinite alternate;
+}
